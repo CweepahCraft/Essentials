@@ -96,9 +96,8 @@ public class EssentialsPlayerListener implements Listener
 	@EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
 	public void onPlayerMove(final PlayerMoveEvent event)
 	{
-		if (event.getFrom().getBlockX() == event.getTo().getBlockX()
-			&& event.getFrom().getBlockZ() == event.getTo().getBlockZ()
-			&& event.getFrom().getBlockY() == event.getTo().getBlockY())
+		if (event.getFrom().getYaw() == event.getTo().getYaw()
+			&& event.getFrom().getPitch() == event.getTo().getPitch())
 		{
 			return;
 		}
