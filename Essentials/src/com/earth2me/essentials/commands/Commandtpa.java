@@ -34,6 +34,10 @@ public class Commandtpa extends EssentialsCommand
 		{
 			throw new Exception(tl("noPerm", "essentials.worlds." + player.getWorld().getName()));
 		}
+		if (player.getTeleportRequest() != null && player.getTeleportRequest().equals(user.getBase().getUniqueId()))
+		{
+			throw new Exception("You've already sent that person a request.");
+		}
 		if (!player.isIgnoredPlayer(user))
 		{
 			player.requestTeleport(user, false);
